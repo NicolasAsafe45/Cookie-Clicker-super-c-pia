@@ -1,0 +1,746 @@
+﻿<!DOCTYPE html>
+<html>
+<header>
+<--! Jogo do Cookiee-->
+<title>Cookie Cliker</title>
+   <link rel="shorcut icon" href="/pngegg">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+/*
+  Esse css ta horrivellll  :((((((((((((((((((((((((((((((
+*/
+body{
+background:Sienna;
+}
+
+         @keyframes tremida {
+ 
+     	0% { transform: scale(1);
+	bottom:0; }
+      
+	50% { transform: scale(0.9);
+	bottom:4px; }
+   
+	75%{transform: scale(1)}  
+	 100% { transform: scale(0.9); }
+   
+ }
+
+
+
+
+
+#container{
+background:Sienna;
+color:white;
+display:flex;
+flex-direction:row;
+border:2px solid white;
+}
+#Cookie{
+cursor:pointer;
+padding:100px;
+border-radius:150px;
+background:Chocolate;
+margin:auto;
+margin-top:40px;
+width:0px;
+transition:0.2s;
+
+}
+#Cookie:active{
+animation:tremida 0.3s;
+
+
+margin-top: 60px;
+}
+h1{
+text-align:center;
+}
+#rigth{
+padding:0px;
+margin:auto;
+margin-top:50px;
+
+}
+#Hotbar{
+padding:30px;
+color:white;
+background:SaddleBrown;
+border:2px solid white;
+}
+
+
+/*A gambiarra ta em dia*/
+/*A minha burrice de n usar lógica ta extrema
+  Isso que dá querer ser programador e burro
+*/
+
+
+
+.GlupAp{
+cursor:pointer;
+background:Chocolate;
+padding:15px;
+border:2px solid white;
+border-radius:10px;
+margin-bottom:16px;
+}
+.GlupAp:hover{
+ background:Sienna;
+}
+.GlupAp:Active{
+ border:2px solid Chocolate;
+}
+#upgrades{
+display:flex;
+flex-direction:row;
+gap:20px;
+background:SaddleBrown;
+margin-top:6px;
+padding:10px;
+border:2px solid white;
+color:white;
+}
+
+
+
+#upGold{
+cursor:pointer;
+background:Gold;
+border:4px solid white;
+border-radius:20px;
+padding:10px;
+width:70px;
+}
+
+
+
+#upGold:hover{
+border:4px solid Gold;
+background:white;
+color:Gold;
+}
+
+
+
+
+#upEsmerald{
+cursor:pointer;
+background:Lime;
+border:4px solid white;
+border-radius:20px;
+padding:10px;
+width:70px;
+}
+
+
+
+
+#upEsmerald:hover{
+border:4px solid green;
+background:white;
+color:lime;
+}
+
+
+
+#upDiamond{
+cursor:pointer;
+background:DeepSkyBlue;
+border:4px solid white;
+border-radius:20px;
+padding:10px;
+width:70px;
+}
+
+
+
+#upDiamond:hover{
+border:4px solid DeepSkyBlue ;
+background:white;
+color:blue;
+}
+
+
+
+#upSpatial{
+cursor:pointer;
+background:DarkMagenta;
+border:4px solid white;
+border-radius:20px;
+padding:10px;
+width:70px;
+}
+
+
+
+
+#upSpatial:hover{
+border:4px solid Purple;
+background:white;
+color:DarkMagenta;
+}
+
+
+
+
+#upBlood{
+cursor:pointer;
+background:Maroon;
+border:4px solid white;
+border-radius:20px;
+padding:10px;
+width:70px;
+}
+
+
+
+#upBlood:hover{
+border:4px solid red;
+background:white;
+color:Maroon;
+}
+
+
+
+#upAngelical{
+cursor:pointer;
+background:Snow;
+border:4px solid Gold;
+border-radius:20px;
+padding:10px;
+color:Goldenrod;
+width:70px;
+}
+
+
+
+#upAngelical:hover{
+border:4px solid white;
+background:Gold;
+color:white;
+}
+
+
+/* Se diacho n ficou responsivel >:( */
+
+#titulos{
+background:rgb(122,55,35);
+border:2px solid white;
+padding:10px;
+color:white;
+border-radius:20px;
+}
+
+
+@keyframes up1G{
+ 0%,100%{
+     background:Gold;
+  }
+ 50%{
+   background:Goldenrod;
+   }
+  75%{
+    background:yellow;
+  }
+}
+
+
+@keyframes up2D{
+ 0%,100%{
+     background:DarkTurquoise;
+  }
+ 50%{
+   background:blue;
+   }
+  75%{
+    background:DeepSkyBlue;
+  }
+}
+
+
+
+@keyframes up3E{
+ 0%,100%{
+     background:ForestGreen;
+  }
+ 50%{
+   background:green;
+   }
+  75%{
+    background:YellowGreen;
+  }
+}
+
+@keyframes up4S{
+ 0%,100%{
+     background:Indigo;
+  }
+ 50%{
+   background:Purple;
+   }
+  75%{
+    background:Magenta;
+  }
+}
+
+
+@keyframes up5B{
+ 0%,100%{
+     background:DarkRed;
+  }
+ 50%{
+   background:red;
+   }
+  75%{
+    background:Maroon;
+  }
+}
+
+
+
+@keyframes up6A{
+ 0%,100%{
+     background:Orange;
+  }
+ 50%{
+   background:Ivory;
+   }
+  75%{
+    background:Gold;
+  }
+}
+
+
+.upG{
+   border:1px solid white;
+    box-shadow:2px 2px 50px yellow;
+  animation:4s up1G infinite;
+}
+.upD{
+   border:1px solid Aqua;
+    box-shadow:2px 2px 50px Aqua;
+  animation:4s up2D infinite;
+}
+.upE{
+     border:1px solid lime;
+    box-shadow:2px 2px 50px lime;
+   animation:4s up3E infinite;
+}
+.upS{
+     border:1px solid Purple;
+    box-shadow:2px 2px 50px Purple;
+    animation:4s up4S infinite;
+}
+.upB{
+     border:1px solid red;
+    box-shadow:2px 2px 50px red;
+   animation:4s up5B infinite;
+}
+.upA{
+    border:1px solid Gold;
+    box-shadow:2px 2px 50px yellow;
+   animation:2s up6A infinite;
+}
+
+
+h4{
+ margin-top:20px;
+  margin-right:10px;
+}
+
+#Icon{
+cursor:pointer;
+background:Sienna;
+padding:10px;
+border:1px solid white;
+height:20px;
+border-radius:10px;
+}
+#Icon:hover{
+background:SaddleBrown;
+}
+#mural{
+display:none;
+background:rgb(122,55,35);
+padding:10px;
+height:200px;
+border:2px solid white;
+width:300px;
+margin:auto;
+margin-top:150px;
+color:white;
+text-align:left;
+}
+#tet{
+padding:10px;
+text-align:right;
+}
+#Icon2{
+cursor:pointer;
+}
+
+</style>
+</header>
+<body>
+
+
+<--! O html ta aceitavel pelo menos -->
+
+
+  <div id="mural">
+ <div id="tet">  <i class="fa-solid fa-xmark" id="Icon2" onclick="Esconda()"></i></div>
+ <span id="cpc"> Cookie por click(CpC): 1</span><br><br>
+<span id="cps"> Cookie por segundo(CpS):0</span><br><br>
+ <span>Patente: Cookie de <span 
+
+id=patente>chocolate</span></span>
+
+</div>
+ <div id="Cont">
+<div id=container>
+<div id=rigth>
+
+   <h1 id="totcookies">0 Cookies</h1>
+   <div id="Cookie" onclick="Click()"></div>
+</div>
+   <h4 id="lv">Level 1</h4>
+<div id="Hotbar">
+<h1>Shop 1</h1>
+<div id="GA" class="GlupAp" onclick="CpCA()">
+Seu CpC  ganha +0.5<br><br> 100 Cookies
+</div>
+<div id="GB" class="GlupAp" onclick="CpCB()">
+Seu CpC  ganha +5<br><br> 500 Cookies
+</div>
+
+<div id="GC" class="GlupAp" onclick="CpCC()">
+Seu CpC  ganha +100<br><br> 3000 Cookies
+</div>
+
+
+</div>
+<div id="Hotbar">
+<h1>Shop 2</h1>
+
+
+<div id="GD"class="GlupAp" onclick="CpCD()">
+Seu CpS  ganha +1<br><br> 1000  Cookies
+</div>
+
+
+<div id="GE" class="GlupAp" onclick="CpCE()">
+Seu CpS  ganha +15<br><br> 10000 Cookies
+</div>
+				
+<div id="GF"class="GlupAp" onclick="CpCF()">
+Seu CpS  ganha +100<br><br> 150000</span> Cookies
+</div>
+
+
+
+
+
+</div>
+</div>
+<div id="upgrades">
+<div id="upGold" onclick="Gup()">Gold Cookie<br><br>10000 
+
+Cookies</div>
+
+<div id="upDiamond" onclick="Dup()">Diamond 
+
+Cookie<br><br>15000 Cookies</div>
+
+<div id="upEsmerald" onclick="Eup()">Esmerald 
+
+Cookie<br><br>100000 Cookies</div>
+
+<div id="upSpatial" onclick="Sup()">Spatial 
+
+Cookie<br><br>1500000 Cookies</div>
+
+<div id="upBlood" onclick="Bup()">Raspberry 
+
+Cookie<br><br>100000000 Cookies</div>
+
+<div id="upAngelical" onclick="Aup()">Angelical 
+
+Cookie<br><br>150000000 Cookies</div>
+
+
+  <i class="fa-solid fa-scroll" id="Icon" onclick="Mostre()"></i>
+</div>
+</div>
+</body>
+<script>
+
+//è tanto elemento q  meus olho doi
+
+const cookie = document.getElementById("Cookie")
+const tot = document.getElementById("totcookies")
+const gb = document.getElementById("GB")
+const ga = document.getElementById("GA")
+const gc = document.getElementById("GC")
+const patente = document.getElementById("patente")
+const cpc = document.getElementById("cpc")
+
+const gd = document.getElementById("GD")
+const ge = document.getElementById("GE")
+const gf = document.getElementById("GF")
+
+
+
+
+const upA1 = document.getElementById("upAngelical")
+const upD1 = document.getElementById("upDiamond")
+const upE1 = document.getElementById("upEsmerald")
+const upS1 = document.getElementById("upSpatial")
+const upB1 = document.getElementById("upBlood")
+const upG1 = document.getElementById("upGold")
+
+const lv = document.getElementById("lv")
+const m = document.getElementById("mural")
+const cont = document.getElementById("Cont")
+
+
+function Mostre(){
+m.style.display = "block"
+cont.style.display = "none"
+
+
+}
+
+
+function Esconda(){
+m.style.display = "none"
+cont.style.display = "block"
+
+
+}
+
+
+
+
+
+
+
+
+//La vem gambiarra
+
+
+
+let pt = "chocolate"
+
+let Cookies = 0000000000
+let CpS = 0
+let CpC = 1
+let level  = 1
+
+let CpCa = 99
+let CpCb = 499
+let CpCc = 2999
+
+let CpSa = 999
+let CpSb = 9999
+let CpSc = 149999
+
+
+
+function Gup(){
+if(Cookies>9999){
+  Cookies-=10000
+  cookie.classList.add("upG")
+  upG1.style.display = "none"
+  pt = "Ouro"
+   Atualize()
+}
+}
+
+
+function CpCD() {
+  if (Cookies > CpSa) {
+    Cookies -= 1000; // Reduz o número de Cookies
+    CpS += 1; // Aumenta o CpS
+    CpSa += 1000; // Ajusta o custo para o próximo upgrade
+    gd.innerHTML = `Seu CpS ganha +1 <br><br> ${CpSa} Cookies`; 
+
+// Atualiza a descrição do upgrade
+    Atualize(); // Atualiza a interface
+  }
+}
+
+function CpCE() {
+  if (Cookies > CpSb) {
+    Cookies -= 10000; // Reduz o número de Cookies
+    CpS += 15; // Aumenta o CpS
+    CpSb += 10000; // Ajusta o custo para o próximo upgrade
+    ge.innerHTML = `Seu CpS ganha +15 <br><br> ${CpSb} 
+
+Cookies`; // Atualiza a descrição do upgrade
+    Atualize(); // Atualiza a interface
+  }
+}
+
+function CpCF() {
+  if (Cookies > CpSc) {
+    Cookies -= 150000; // Reduz o número de Cookies
+    CpS += 100; // Aumenta o CpS
+    CpSc += 150000; // Ajusta o custo para o próximo upgrade
+    gf.innerHTML = `Seu CpS ganha +100 <br><br> ${CpSc} 
+
+Cookies`; // Atualiza a descrição do upgrade
+    Atualize(); // Atualiza a interface
+  }
+}
+
+
+
+function Dup(){
+if(Cookies>14999){
+ Cookies-=15000
+  cookie.classList.add("upD")
+  upD1.style.display = "none"
+  pt = "Diamante"
+ Atualize()
+}}
+
+function Eup(){
+if(Cookies>99999){
+ Cookies-=100000
+  cookie.classList.add("upE")
+  upE1.style.display = "none"
+  pt = "Esmeralda"
+ Atualize()
+}}
+
+function Sup(){
+if(Cookies>1499999){
+ Cookies-=1500000
+  cookie.classList.add("upS")
+  upS1.style.display = "none"
+  pt = "Espacial"
+ Atualize()
+}}
+
+
+function Bup(){
+if(Cookies>9999999){
+ Cookies-=100000000
+  cookie.classList.add("upB")
+  upB1.style.display = "none"
+  pt = "Framboeza"
+ Atualize()
+}}
+
+function Aup(){
+if(Cookies>1499999){
+ Cookies-=1500000
+  cookie.classList.add("upA")
+  upA1.style.display = "none"
+   level = 2
+   Cookies = 0
+  pt = "Anjos"
+
+ Atualize()
+}}
+
+//Quanta função desnecessaria meu Deus :()(()()()()()()(
+
+
+function Atualize(){
+cpc.textContent = "Cookie por click: " + CpC
+patente.textContent = pt
+tot.textContent = Cookies + " Cookies"
+cps.textContent = "Cookie por segundo:  " + CpS
+lv.textContent ="Level " + level
+
+if(Cookies<0){
+
+  Cookies=0
+  
+}
+
+
+}
+
+function Click(){
+
+      Cookies+= CpC
+      tot.textContent = Cookies + " Cookies"
+       Atualize()
+	   
+}
+
+
+function CpCA(){
+ if(Cookies>CpCa){
+ 
+  Cookies -= CpCa
+  tot.textContent = Cookies + " Cookies"
+ CpC+=0.5
+ CpCa+=11
+  ga.innerHTML = `Seu CpC ganha +0.5 <br><br> ${CpCa} Cookies`
+  Atualize()
+  
+}}
+
+function CpCB(){
+ if(Cookies>CpCb){
+ 
+  Cookies -= CpCb
+  tot.textContent = Cookies + " Cookies"
+ CpC+=5
+ CpCb+=101
+  gb.innerHTML = `Seu CpC ganha +5 <br><br> ${CpCb} Cookies`
+  Atualize()
+  
+}}
+
+
+
+function CpCC(){
+ if(Cookies>CpCc){
+ 
+  Cookies -= CpCc
+  tot.textContent = Cookies + " Cookies"
+ CpC+=100
+ CpCc+=2500
+  gc.innerHTML = `Seu CpC ganha +100 <br><br> ${CpCc} Cookies`
+  Atualize()
+  
+}}
+
+//Eu to doiodo aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+
+
+CpS
+function addCookies() {
+
+  Cookies += CpS;
+  tot.textContent = Cookies + " Cookies"; 
+  
+}
+
+
+
+
+
+
+
+
+
+
+let cookieInterval = setInterval(addCookies, 1000);
+
+
+</script>
+</html>
+
+// 700 e poucas linhas de codigo feitas no bloco de notasss............  
+// <8
